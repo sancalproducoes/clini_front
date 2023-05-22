@@ -1,0 +1,63 @@
+<div class="header">
+    <div class="logo logo-dark">
+        <a href="">
+            <img src="assets/images/logo/logo.png" alt="Logo">
+            <img class="logo-fold" src="assets/images/logo/logo-fold.png" alt="Logo">
+        </a>
+    </div>
+    <div class="logo logo-white">
+        <a href="">
+            <img src="assets/images/logo/logo-white.png" alt="Logo">
+            <img class="logo-fold" src="assets/images/logo/logo-fold-white.png" alt="Logo">
+        </a>
+    </div>
+    <div class="nav-wrap">
+        <ul class="nav-left">
+            <li class="desktop-toggle">
+                <a (click)="toggleFold()">
+                    <i nz-icon [nzType]="isFolded? 'menu-unfold':'menu-fold'" theme="outline"></i>
+                </a>
+            </li>
+            <li class="mobile-toggle">
+                <a (click)="toggleExpand()">
+                    <i nz-icon [nzType]="isExpand? 'menu-fold': 'menu-unfold'" theme="outline"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav-right">
+            <li>
+                <span class="title-user">Olá, {{user.name  + " " + user.lastname}}!</span>
+            </li>
+            <li>
+                <span class="p-h-10 pointer" nz-dropdown [nzDropdownMenu]="profile" [nzTrigger]="'click'" [nzPlacement]="'bottomRight'">
+                    <nz-avatar [nzSrc]="profile_pic"></nz-avatar>
+                </span>
+                <nz-dropdown-menu #profile="nzDropdownMenu">
+                    <ul nz-menu class="p-b-15 p-t-20">
+                        <li class="p-h-20 p-b-15 m-b-10 border-bottom">
+                            <p class="m-b-0 text-dark font-weight-semibold">Bem vindo(a) {{user.name}}</p>
+                        </li>
+                        <li nz-menu-item>
+                            <a (click)="configuracoes()" class="p-v-5 d-flex align-items-center justify-content-between">
+                                <div>
+                                    <i class="opacity-04 font-size-16" nz-icon nzType="user" theme="outline"></i>
+                                    <span class="m-l-10">Configurações</span>
+                                </div>
+                                <i class="font-size-10" nz-icon nzType="right" theme="outline"></i>
+                            </a>
+                        </li>
+                        <li nz-menu-item>
+                            <a (click)="logout()" class="p-v-5 d-flex align-items-center justify-content-between">
+                                <div>
+                                    <i class="opacity-04 font-size-16" nz-icon nzType="logout" theme="outline"></i>
+                                    <span class="m-l-10">Logout</span>
+                                </div>
+                                <i class="font-size-10" nz-icon nzType="right" theme="outline"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nz-dropdown-menu >
+            </li>
+        </ul>
+    </div>
+</div>    
