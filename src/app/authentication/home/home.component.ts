@@ -7,10 +7,10 @@ import { WorkspaceService } from 'src/app/shared/services/workspace.service';
 
 
 @Component({
-    templateUrl: './login.component.html'
+    templateUrl: './home.component.html'
 })
 
-export class LoginComponent {
+export class HomeComponent {
     loginForm: UntypedFormGroup;
     workspace =  "";
     submitForm(): void {
@@ -41,25 +41,10 @@ export class LoginComponent {
             userName: [ null, [ Validators.required ] ],
             password: [ null, [ Validators.required ] ]
         });
+        this.redirectToSite();
     }
 
-    SubmitLogin(){
-        this.workspaceSvc.getWorkspaceByName(this.workspace).subscribe(data=>{
-            console.log(data)
-            if(data[0]['success'] == undefined){
-                localStorage.setItem("workspace_id",data[0]['id'])
-                localStorage.setItem("workspace_name",data[0]['name'])
-            }
-            this.UsersSvc.getCurrentUserByWorkspace(data[0]['id']).subscribe(data2=>{
-                console.log(data2)
-                localStorage.setItem("user_data",JSON.stringify(data2[0]))
-                this.router.navigate(['/'+localStorage.getItem("workspace_name")+'/dashboard'])
-            },error=>{
-                this.errorSvc.callError(error);
-            }
-            )
-        },error=>{
-            this.errorSvc.callError(error);
-        })
+    redirectToSite(){
+        window.location.href="https://sancalproducoes.com.br"
     }
-} 
+}    

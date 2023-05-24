@@ -23,8 +23,6 @@ export class HeaderComponent{
     ngOnInit(): void {
         this.themeService.isMenuFoldedChanges.subscribe(isFolded => this.isFolded = isFolded);
         this.themeService.isExpandChanges.subscribe(isExpand => this.isExpand = isExpand);
-        this.user = JSON.parse(localStorage.getItem("user_data"));
-        this.profile_pic = "data:"+this.user.profile_pic_mime+";base64,"+this.user.profile_pic;
     }
 
     toggleFold() {

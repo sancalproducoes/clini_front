@@ -13,6 +13,6 @@ export class UsersService {
         let headers ={
             'Authorization': 'Basic '+api
         }
-        return this.http.get(`${APIROUTE}workspaces/id/`+workspace_id+'/user',{headers:headers})
+        return this.http.get(`${APIROUTE}workspaces/id/`+workspace_id+'/user/',{headers:headers})
     }
 }

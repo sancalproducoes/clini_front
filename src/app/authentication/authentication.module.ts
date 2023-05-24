@@ -15,6 +15,7 @@ import { WorkspaceService } from '../shared/services/workspace.service'
 import { ErrorService } from '../shared/services/error.service';
 import { UsersService } from '../shared/services/users.service';
 import { ForgetComponent } from './forget/forget.component';
+import { HomeComponent } from './home/home.component';
 const antdModule= [
     NzFormModule,
     NzInputModule,
@@ -33,7 +34,8 @@ const antdModule= [
     ],
     declarations: [
         LoginComponent,
-        ForgetComponent
+        ForgetComponent,
+        HomeComponent
     ],
     providers:[
         WorkspaceService,

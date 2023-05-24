@@ -10,7 +10,7 @@ import { CommonLayout_ROUTES } from "./shared/routes/common-layout.routes";
 const appRoutes: Routes = [
     {
         path: '',
-        redirectTo: '',
+        redirectTo: '/clinicare/home',
         pathMatch: 'full',
     },
     { 
