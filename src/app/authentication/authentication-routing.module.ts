@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
+import { SairComponent } from './sair/sair.component';
 import { ForgetComponent } from './forget/forget.component'
 import { HomeComponent } from './home/home.component';
 
@@ -18,6 +19,13 @@ const routes: Routes = [
         component: LoginComponent,
         data: {
             title: 'Login'
+        }
+    },
+    {
+        path: 'sair',
+        component: SairComponent,
+        data: {
+            title: 'Sair'
         }
     },
     {

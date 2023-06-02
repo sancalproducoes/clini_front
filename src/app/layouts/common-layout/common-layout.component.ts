@@ -11,7 +11,7 @@ import { ThemeConstantService } from '../../shared/services/theme-constant.servi
 })
 
 export class CommonLayoutComponent  {
-
+    
     breadcrumbs$: Observable<IBreadcrumb[]>;
     contentHeaderDisplay: string;
     isFolded : boolean ;
@@ -41,6 +41,12 @@ export class CommonLayoutComponent  {
     }
 
     ngOnInit() {
+        let reload = localStorage.getItem("menu_reload")
+        if(reload == '0'){
+            localStorage.setItem("menu_reload",'1')
+            window.location.reload()
+        }
+
         this.breadcrumbs$ = this.router.events.pipe(
             startWith(new NavigationEnd(0, '/', '/')),
             filter(event => event instanceof NavigationEnd),distinctUntilChanged(),

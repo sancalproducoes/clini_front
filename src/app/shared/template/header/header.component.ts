@@ -8,9 +8,7 @@ import { Router } from '@angular/router';
 })
 
 export class HeaderComponent{
-
     searchVisible : boolean = false;
-    quickViewVisible : boolean = false;
     isFolded : boolean;
     isExpand : boolean;
     user
@@ -21,8 +19,14 @@ export class HeaderComponent{
         ) {}
 
     ngOnInit(): void {
+        this.getUserData();
         this.themeService.isMenuFoldedChanges.subscribe(isFolded => this.isFolded = isFolded);
         this.themeService.isExpandChanges.subscribe(isExpand => this.isExpand = isExpand);
+    }
+
+    getUserData(){
+        this.user = JSON.parse(localStorage.getItem("userdata"))
+        this.profile_pic = "data:"+this.user.profile_pic_mime+";base64,"+this.user.profile_pic
     }
 
     toggleFold() {
@@ -37,16 +41,10 @@ export class HeaderComponent{
         this.themeService.toggleFold(this.isFolded);
     }
 
-    searchToggle(): void {
-        this.searchVisible = !this.searchVisible;
-    }
-
-    quickViewToggle(): void {
-        this.quickViewVisible = !this.quickViewVisible;
-    }
 
     configuracoes(){
-
+        let workspace = localStorage.getItem("workspace_name");
+        this.router.navigate(['/'+workspace+'/configuracoes'])
     }
 
     logout(){

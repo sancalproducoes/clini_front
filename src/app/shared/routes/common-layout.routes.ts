@@ -8,5 +8,10 @@ export const CommonLayout_ROUTES: Routes = [
     {
         path: ':workspace/usuarios',
         loadChildren: () => import('../../usuarios/usuarios.module').then(m => m.UsuariosModule),
-    } 
+    },
+    {
+        path: ':workspace/configuracoes',
+        loadChildren: () => import('../../configuracoes/configuracoes.module').then(m => m.ConfiguracoesModule),
+    }  
+
 ];

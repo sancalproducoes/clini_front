@@ -16,6 +16,7 @@ import { ErrorService } from '../shared/services/error.service';
 import { UsersService } from '../shared/services/users.service';
 import { ForgetComponent } from './forget/forget.component';
 import { HomeComponent } from './home/home.component';
+import { SairComponent } from './sair/sair.component';
 const antdModule= [
     NzFormModule,
     NzInputModule,
@@ -34,6 +35,7 @@ const antdModule= [
     ],
     declarations: [
         LoginComponent,
+        SairComponent,
         ForgetComponent,
         HomeComponent
     ],
