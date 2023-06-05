@@ -33,7 +33,7 @@ const antdModule = [
     NzDividerModule,
     NzSwitchModule,
     NzInputModule,
-    NzButtonModule
+    NzButtonModule,
 ]
 
 @NgModule({

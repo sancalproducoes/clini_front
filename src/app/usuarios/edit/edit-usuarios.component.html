@@ -69,11 +69,7 @@
                 <td>
                     <a (click)="editUser(user.id)" nz-icon nzType="eye" nzTheme="outline"></a> 
                     &nbsp;
-                    <a  nz-popconfirm
-                    nzPopconfirmTitle="Tem certeza que quer desativar esse usuário?"
-                    nzPopconfirmPlacement="top"
-                    (nzOnConfirm)="confirm(user.id)"
-                    nz-icon nzType="delete" nzTheme="outline"></a>
+                    <a (click)="disableUser(user.id)" nz-icon nzType="delete" nzTheme="outline"></a>
                 </td>
             </tr>
         </tbody>

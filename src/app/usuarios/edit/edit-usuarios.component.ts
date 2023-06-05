@@ -1,18 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-usuarios',
-    templateUrl: './usuarios.component.html',
+    templateUrl: './edit-usuarios.component.html',
 })
 
-export class UsuariosComponent implements OnInit {
-    componentName = 'Usuários';
-    workspace_name = localStorage.getItem("workspace_name");
+export class EditUsuariosComponent implements OnInit {
+    componentName = 'Editar Usuário';
     users:any;
-    constructor(
-        private route: Router
-    ) { }
+    constructor() { }
 
     ngOnInit(): void {
         this.getAllUsers();
@@ -51,7 +47,7 @@ export class UsuariosComponent implements OnInit {
     }
 
     editUser(user_id){
-        this.route.navigate([this.workspace_name+'/usuarios/edit/'+user_id])
+        console.log(user_id)
     }
 
     disableUser(user_id){

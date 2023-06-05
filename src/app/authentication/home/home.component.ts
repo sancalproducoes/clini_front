@@ -41,10 +41,9 @@ export class HomeComponent {
             userName: [ null, [ Validators.required ] ],
             password: [ null, [ Validators.required ] ]
         });
-        this.redirectToSite();
     }
 
-    redirectToSite(){
-        window.location.href="https://sancalproducoes.com.br"
-    }
+    // redirectToSite(){
+    //     window.location.href="https://sancalproducoes.com.br"
+    // }
 }    

@@ -9,6 +9,14 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { ThemeConstantService } from './services/theme-constant.service';
 import { SearchPipe } from './pipes/search.pipe';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+
 
 @NgModule({
     exports: [
@@ -18,7 +26,14 @@ import { SearchPipe } from './pipes/search.pipe';
         HttpClientJsonpModule,
         NzIconModule,
         PerfectScrollbarModule,
-        SearchPipe
+        SearchPipe,
+        NzPageHeaderModule,
+        NzTableModule,
+        NzCardModule,
+        NzInputModule,
+        NzFormModule,
+        NzSelectModule,
+        NzPopconfirmModule
     ],
     imports: [
         RouterModule,
@@ -26,7 +41,8 @@ import { SearchPipe } from './pipes/search.pipe';
         NzIconModule,
         NzToolTipModule,
         NzMessageModule,
-        PerfectScrollbarModule
+        PerfectScrollbarModule,
+        
     ],
     declarations: [
         SearchPipe

@@ -28,6 +28,14 @@ if(roles != null && roles != undefined){
             icon: 'bar-chart',
             submenu: []
         },
+        {
+            path: workspace+'/usuarios',
+            title: 'Usuarios',
+            iconType: 'nzIcon',
+            iconTheme: 'outline',
+            icon: 'user',
+            submenu: []
+        },
     ]
 
     menu_final = [

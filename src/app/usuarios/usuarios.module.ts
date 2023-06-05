@@ -5,6 +5,7 @@ import { UsuariosComponent } from './usuarios.component';
 
 /** Import any ng-zorro components as the module required except icon module */
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { EditUsuariosComponent } from './edit/edit-usuarios.component';
 
 /** Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -19,7 +20,8 @@ const antdModule = [
     ],
     exports: [],
     declarations: [
-        UsuariosComponent
+        UsuariosComponent,
+        EditUsuariosComponent
     ]
 })
 export class UsuariosModule { }

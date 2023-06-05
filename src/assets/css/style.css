@@ -16,3 +16,7 @@
 .logo a img.logo-fold {
     width: 100%;
 }
+
+nz-page-header {
+    padding: 0!important;
+}
