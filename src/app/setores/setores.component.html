@@ -1,0 +1,64 @@
+<nz-page-header class="site-page-header" nzBackIcon>
+    <nz-page-header-title>{{componentName}}</nz-page-header-title>
+</nz-page-header>
+<nz-card [formGroup]="filterForm">
+    <div class="form">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7">
+                    <nz-form-label class="filter">Buscar por nome</nz-form-label><br/>
+                    <input type="text" nzPrefix="searchPrefix" formControlName="nome" nz-input placeholder="Buscar por nome">
+                    <ng-template #searchPrefix>
+                        <i class="opacity-04" nz-icon nzType="search"></i>
+                    </ng-template>
+                </div>
+                <div class="col-md-2">
+                    <nz-form-label class="filter">Ativo</nz-form-label><br/>
+                    <nz-select formControlName="ativo" class="w-100">
+                        <nz-option nzValue="1" nzLabel="Ativos"></nz-option>
+                        <nz-option nzValue="0" nzLabel="Inativos"></nz-option>
+                      </nz-select>
+                </div>
+                <div class="col-md-2">
+                    <nz-form-label class="invisible"></nz-form-label><br/>
+                    <button class="w-100" nz-button nzType="primary">Pesquisar</button>
+                </div>
+                <div class="col-md-1">
+                    <nz-form-label class="invisible"></nz-form-label><br/>
+                    <button (click)="newSetor()" class="w-100" nz-button nzType="primary"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nz-card>
+<nz-card>
+    <nz-table 
+        [nzData]="setores"
+        [nzSize]="10" 
+        #usersTable>
+        <thead>   
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Status</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let setor of setores">
+                <td>{{setor.id}}</td>
+                <td>{{setor.name}}</td>
+                <td>{{setor.status}}</td>
+                <td>
+                    <a (click)="editSetor(setor.id)" nz-icon nzType="edit" nzTheme="outline"></a> 
+                    &nbsp;
+                    <a  nz-popconfirm
+                    nzPopconfirmTitle="Tem certeza que quer desativar esse setor?"
+                    nzPopconfirmPlacement="top"
+                    (nzOnConfirm)="disableSetor(setor.id)"
+                    nz-icon nzType="delete" nzTheme="outline"></a>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+</nz-card>

@@ -20,3 +20,7 @@
 nz-page-header {
     padding: 0!important;
 }
+
+.header *{
+    color:white!important;
+}

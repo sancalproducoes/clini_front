@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { UsuariosRoutingModule } from "./usuarios-routing.module";
-import { UsuariosComponent } from './usuarios.component';
+import { SetoresRoutingModule } from "./setores-routing.module";
+import { SetoresComponent } from './setores.component';
 
 /** Import any ng-zorro components as the module required except icon module */
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { EditUsuariosComponent } from './edit/edit-usuarios.component';
-import { NewUsuariosComponent } from './new/new-usuarios.component';
+import { EditSetoresComponent } from './edit/edit-setores.component';
+import { NewSetoresComponent } from './new/new-setores.component';
 
 /** Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -16,14 +16,14 @@ const antdModule = [
 @NgModule({
     imports: [
         SharedModule,
-        UsuariosRoutingModule,
+        SetoresRoutingModule,
         ...antdModule
     ],
     exports: [],
     declarations: [
-        UsuariosComponent,
-        EditUsuariosComponent,
-        NewUsuariosComponent
+        SetoresComponent,
+        EditSetoresComponent,
+        NewSetoresComponent
     ]
 })
-export class UsuariosModule { }
+export class SetoresModule { }

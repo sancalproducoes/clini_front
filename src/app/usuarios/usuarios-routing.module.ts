@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UsuariosComponent } from './usuarios.component';
 import { EditUsuariosComponent } from './edit/edit-usuarios.component'
+import { NewUsuariosComponent } from './new/new-usuarios.component';
 const routes: Routes = [
     {
         path: '',
@@ -17,6 +18,14 @@ const routes: Routes = [
         data:{
             title:'Editar Usuário',
             headerDisplay: 'none'
+        }
+    },
+    {
+        path:'new',
+        component:NewUsuariosComponent,
+        data:{
+            title:'Novo usuário',
+            headerDispay:'none'
         }
     }
 ];

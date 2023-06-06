@@ -1,5 +1,5 @@
 <nz-page-header class="site-page-header" nzBackIcon>
-    <nz-page-header-title>{{componentName}} - {{userType | titlecase}}</nz-page-header-title>
+    <nz-page-header-title>{{componentName}}</nz-page-header-title>
 </nz-page-header>
 <nz-card>
     <div class="form">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-1">
                     <nz-form-label class="invisible"></nz-form-label><br/>
-                    <button (click)="newUsuario()" class="w-100" nz-button nzType="primary"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
+                    <button (click)="newFormulario()" class="w-100" nz-button nzType="primary"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
                 </div>
             </div>
         </div>
@@ -48,35 +48,29 @@
 </nz-card>
 <nz-card>
     <nz-table 
-        [nzData]="users"
+        [nzData]="formularios"
         [nzSize]="10" 
         #usersTable>
         <thead>   
             <tr>
                 <th>Id</th>
                 <th>Nome</th>
-                <th>Email</th>
-                <th>Departamento</th>
-                <th>Tipo Cadastro</th>
                 <th>Status</th>
                 <th>Ação</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users">
-                <td>{{user.id}}</td>
-                <td>{{user.name + " " + user.lastname}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.department}}</td>
-                <td>{{user.cadastro}}</td>
-                <td>{{user.status}}</td>
+            <tr *ngFor="let formulario of formularios">
+                <td>{{formulario.id}}</td>
+                <td>{{formulario.name}}</td>
+                <td>{{formulario.status}}</td>
                 <td>
-                    <a (click)="editUser(user.id)" nz-icon nzType="eye" nzTheme="outline"></a> 
+                    <a (click)="editFormulario(formulario.id)" nz-icon nzType="eye" nzTheme="outline"></a> 
                     &nbsp;
                     <a  nz-popconfirm
-                    nzPopconfirmTitle="Tem certeza que quer desativar esse usuário?"
+                    nzPopconfirmTitle="Tem certeza que quer desativar esse formulário?"
                     nzPopconfirmPlacement="top"
-                    (nzOnConfirm)="confirm(user.id)"
+                    (nzOnConfirm)="confirm(formulario.id)"
                     nz-icon nzType="delete" nzTheme="outline"></a>
                 </td>
             </tr>

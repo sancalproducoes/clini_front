@@ -1,25 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-    selector: 'app-usuarios',
-    templateUrl: './usuarios.component.html',
+    selector: 'app-formularios',
+    templateUrl: './new-formularios.component.html',
 })
 
-export class UsuariosComponent implements OnInit {
-    componentName = 'Usuários';
-    workspace_name = localStorage.getItem("workspace_name");
+export class NewFormulariosComponent implements OnInit {
+    componentName = 'Novo Formulário';
     users:any;
-    userType = '';
-    constructor(
-        private route: Router,
-        private actRt: ActivatedRoute
-    ) { }
+    constructor() { }
 
     ngOnInit(): void {
-        this.actRt.queryParams.subscribe(data=>{
-            this.userType = data['user_type']
-        })
         this.getAllUsers();
     }
 
@@ -55,12 +46,8 @@ export class UsuariosComponent implements OnInit {
         ]
     }
 
-    newUsuario(){
-        this.route.navigate([this.workspace_name+'/usuarios/new/'])
-    }
-
     editUser(user_id){
-        this.route.navigate([this.workspace_name+'/usuarios/edit/'+user_id])
+        console.log(user_id)
     }
 
     disableUser(user_id){

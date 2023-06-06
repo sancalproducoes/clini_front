@@ -1,5 +1,5 @@
 <nz-page-header class="site-page-header" nzBackIcon>
-    <nz-page-header-title>{{componentName}} - {{userType | titlecase}}</nz-page-header-title>
+    <nz-page-header-title>{{componentName}}</nz-page-header-title>
 </nz-page-header>
 <nz-card>
     <div class="form">
@@ -12,7 +12,7 @@
                         <i class="opacity-04" nz-icon nzType="search"></i>
                     </ng-template>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <nz-form-label class="filter">Buscar por departamento</nz-form-label><br/>
                     <input type="text" nzPrefix="searchPrefix" nz-input placeholder="Buscar por departamento">
                     <ng-template #searchPrefix>
@@ -37,10 +37,6 @@
                 <div class="col-md-2">
                     <nz-form-label class="invisible"></nz-form-label><br/>
                     <button class="w-100" nz-button nzType="primary">Pesquisar</button>
-                </div>
-                <div class="col-md-1">
-                    <nz-form-label class="invisible"></nz-form-label><br/>
-                    <button (click)="newUsuario()" class="w-100" nz-button nzType="primary"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
                 </div>
             </div>
         </div>
@@ -73,11 +69,7 @@
                 <td>
                     <a (click)="editUser(user.id)" nz-icon nzType="eye" nzTheme="outline"></a> 
                     &nbsp;
-                    <a  nz-popconfirm
-                    nzPopconfirmTitle="Tem certeza que quer desativar esse usuário?"
-                    nzPopconfirmPlacement="top"
-                    (nzOnConfirm)="confirm(user.id)"
-                    nz-icon nzType="delete" nzTheme="outline"></a>
+                    <a (click)="disableUser(user.id)" nz-icon nzType="delete" nzTheme="outline"></a>
                 </td>
             </tr>
         </tbody>

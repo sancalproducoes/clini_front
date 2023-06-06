@@ -16,7 +16,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     exports: [
@@ -33,6 +33,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
         NzInputModule,
         NzFormModule,
         NzSelectModule,
+        ReactiveFormsModule,
         NzPopconfirmModule
     ],
     imports: [
@@ -42,6 +43,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
         NzToolTipModule,
         NzMessageModule,
         PerfectScrollbarModule,
+        
         
     ],
     declarations: [

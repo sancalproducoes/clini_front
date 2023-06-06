@@ -22,6 +22,7 @@ if(roles != null && roles != undefined){
     menu_admin = [
         {
             path: workspace+'/dashboard',
+            params: {},
             title: 'Dashboard',
             iconType: 'nzIcon',
             iconTheme: 'outline',
@@ -30,10 +31,66 @@ if(roles != null && roles != undefined){
         },
         {
             path: workspace+'/usuarios',
+            params: {},
             title: 'Usuarios',
             iconType: 'nzIcon',
             iconTheme: 'outline',
             icon: 'user',
+            submenu: [
+                {
+                    path: workspace+'/usuarios',
+                    params: {user_type:'todos'},
+                    title: 'Todos',
+                    iconType: 'nzIcon',
+                    iconTheme: 'outline',
+                    icon: 'user',
+                    submenu: []
+                },
+                {
+                    path: workspace+'/usuarios',
+                    params: {user_type:'funcionarios'},
+                    title: 'Funcionarios',
+                    iconType: 'nzIcon',
+                    iconTheme: 'outline',
+                    icon: 'user',
+                    submenu: []
+                },
+                {
+                    path: workspace+'/usuarios',
+                    params: {user_type:'administradores'},
+                    title: 'Administradores',
+                    iconType: 'nzIcon',
+                    iconTheme: 'outline',
+                    icon: 'user',
+                    submenu: []
+                },
+                {
+                    path: workspace+'/usuarios',
+                    params: {user_type:'pacientes'},
+                    title: 'Pacientes',
+                    iconType: 'nzIcon',
+                    iconTheme: 'outline',
+                    icon: 'user',
+                    submenu: []
+                },
+            ]
+        },
+        {
+            path: workspace+'/setores',
+            params: {},
+            title: 'Setores',
+            iconType: 'nzIcon',
+            iconTheme: 'outline',
+            icon: 'folder',
+            submenu: []
+        },
+        {
+            path: workspace+'/formularios',
+            params: {},
+            title: 'Formulários',
+            iconType: 'nzIcon',
+            iconTheme: 'outline',
+            icon: 'form',
             submenu: []
         },
     ]
@@ -41,6 +98,7 @@ if(roles != null && roles != undefined){
     menu_final = [
         {
             path: workspace+'/configuracoes',
+            params: {},
             title: 'Configurações',
             iconType: 'nzIcon',
             iconTheme: 'outline',
@@ -49,6 +107,7 @@ if(roles != null && roles != undefined){
         },
         {
             path: workspace+'/authentication/sair',
+            params: {},
             title: 'Sair',
             iconType: 'nzIcon',
             iconTheme: 'outline',
