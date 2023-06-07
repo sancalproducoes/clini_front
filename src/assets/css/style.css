@@ -29,3 +29,10 @@ nz-page-header {
     background: #35ce8d;
     color: white;
 }
+
+.ant-list-item {
+    align-items: center;
+    display: flex;
+    padding-top: 13px!important;
+    padding-bottom: 14px!important;
+}

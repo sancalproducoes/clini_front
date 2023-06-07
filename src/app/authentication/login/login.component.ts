@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { UntypedFormBuilder, UntypedFormGroup,  Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NzMessageComponent, NzMessageModule, NzMessageService } from 'ng-zorro-antd/message';
 import { ErrorService } from 'src/app/shared/services/error.service';
 import { UsersService } from 'src/app/shared/services/users.service';
 import { WorkspaceService } from 'src/app/shared/services/workspace.service';
@@ -26,7 +27,8 @@ export class LoginComponent {
         private workspaceSvc: WorkspaceService,
         private errorSvc: ErrorService,
         private UsersSvc:UsersService,
-        private router: Router
+        private router: Router,
+        private message:NzMessageService
         ) {
     }
 
@@ -52,7 +54,7 @@ export class LoginComponent {
             "profile_pic_mime":"image/jpg",
             "status":true,
 //            "roles":['ROLE_ADMIN'],
-            "roles":['ROLE_COLABORADOR'],
+            "roles":['ROLE_ADMIN'],
             "creation_dt":"2023-05-26 08:00:00",
             "update_dt":"2023-05-26 08:00:00"
         };
@@ -60,12 +62,11 @@ export class LoginComponent {
         localStorage.setItem("userdata", JSON.stringify(userData));
         if(userData.roles.includes("ROLE_ADMIN")){
             this.router.navigate([localStorage.getItem("workspace_name")+"/usuarios"])
-        }
+        }else
         if(userData.roles.includes("ROLE_COLABORADOR")){
             this.router.navigate([localStorage.getItem("workspace_name")+"/usuarios/meus_pacientes"])
-        }
-        if(userData.roles.includes("ROLE_RESPONSAVEL")){
-            this.router.navigate([localStorage.getItem("workspace_name")+"/dashboard"])
+        }else{
+            this.message.create("error","Algo de errado aconteceu, tente novamente mais tarde")
         }
         
 

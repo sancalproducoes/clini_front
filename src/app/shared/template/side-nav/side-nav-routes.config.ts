@@ -74,6 +74,15 @@ if(roles != null && roles != undefined){
             submenu: []
         },
         {
+            path: workspace+'/mensagens/',
+            params: {},
+            title: 'Mensagens',
+            iconType: 'nzIcon',
+            iconTheme: 'outline',
+            icon: 'mail',
+            submenu: []
+        },   
+        {
             path: workspace+'/formularios',
             params: {},
             title: 'Formulários',

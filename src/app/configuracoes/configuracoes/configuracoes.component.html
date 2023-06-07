@@ -115,36 +115,79 @@
             </nz-card>  
             <nz-card nzTitle="Endereço">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <nz-form-item>
-                            <nz-form-label>Full Address</nz-form-label>
                             <nz-form-control>
-                                <input nz-input placeholder="Address">
+                                <nz-form-label>Logradouro</nz-form-label><br/>
+                                <input nz-input placeholder="Logradouro">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-3">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>Número</nz-form-label><br/>
+                                <input nz-input placeholder="Número">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-3">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>Complemento</nz-form-label><br/>
+                                <input nz-input placeholder="Complemento">
                             </nz-form-control>
                         </nz-form-item>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-2">
                         <nz-form-item>
-                            <nz-form-label>State & City</nz-form-label>
                             <nz-form-control>
-                                <input nz-input placeholder="State & City">
+                                <nz-form-label>Bairro</nz-form-label><br/>
+                                <input nz-input placeholder="Bairro">
                             </nz-form-control>
                         </nz-form-item>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <nz-form-item>
-                            <nz-form-label>Country</nz-form-label>
                             <nz-form-control>
-                                <nz-select class="w-100" [(ngModel)]="selectedCountry" nzPlaceHolder="Country">
-                                    <nz-option nzValue="US" nzLabel="United Stata"></nz-option>
-                                    <nz-option nzValue="UK" nzLabel="United Kingdom"></nz-option>
-                                    <nz-option nzValue="FR" nzLabel="France"></nz-option>
-                                    <nz-option nzValue="DE" nzLabel="German"></nz-option>
-                                </nz-select>
+                                <nz-form-label>Cidade</nz-form-label><br/>
+                                <input nz-input placeholder="Cidade">
                             </nz-form-control>
                         </nz-form-item>
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>Estado</nz-form-label><br/>
+                                <input nz-input placeholder="Estado">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>País</nz-form-label><br/>
+                                <input nz-input placeholder="País">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>CEP</nz-form-label><br/>
+                                <input nz-input placeholder="CEP">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <nz-form-control>
+                            <nz-form-label class="invisible"></nz-form-label><br/>
+                            <button  nz-button nzType="primary" >Salvar</button>
+                        </nz-form-control>
                     </div>
                 </div>
             </nz-card>      
