@@ -7,40 +7,38 @@ import { Component, OnInit } from '@angular/core';
 
 export class NewUsuariosComponent implements OnInit {
     componentName = 'Novo Usuário';
-    users:any;
+    roles:any;
     constructor() { }
 
     ngOnInit(): void {
-        this.getAllUsers();
+        this.getAllRoles();
+
+    }
+    
+    cadastraUsuario(){
+
     }
 
-    getAllUsers(){
-        this.users = [
+    getAllRoles(){
+        this.roles = [
             {
                 id:'1',
-                name:'Giovanna',
-                lastname:'Lisboa',
-                email:'giovanna.lisboa@gmail.com',
-                department:'Psico M',
-                cadastro:"Funcionário",
+                name:'Administrador',
                 status:true,
             },
             {
                 id:'2',
-                name:'Marcos',
-                lastname:'Sanches',
-                email:'marcos.sanches@gmail.com',
-                department:'ABA',
-                cadastro:"Funcionário",
+                name:'Paciente',
                 status:true,
             },
             {
                 id:'3',
-                name:'Roseli',
-                lastname:'Alves',
-                email:'roseli.alves@gmail.com',
-                department:'--',
-                cadastro:"Responsável",
+                name:"Colaborador",
+                status:true,
+            },
+            {
+                id:'4',
+                name:"Responsável",
                 status:true,
             },
         ]

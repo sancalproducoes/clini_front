@@ -55,6 +55,7 @@
             <tr>
                 <th>Id</th>
                 <th>Nome</th>
+                <th>Departamento</th>
                 <th>Status</th>
                 <th>Ação</th>
             </tr>
@@ -63,6 +64,7 @@
             <tr *ngFor="let formulario of formularios">
                 <td>{{formulario.id}}</td>
                 <td>{{formulario.name}}</td>
+                <td>{{formulario.department_name}}</td>
                 <td>{{formulario.status}}</td>
                 <td>
                     <a (click)="editFormulario(formulario.id)" nz-icon nzType="eye" nzTheme="outline"></a> 

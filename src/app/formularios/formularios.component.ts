@@ -24,19 +24,25 @@ export class FormulariosComponent implements OnInit {
         this.formularios = [
             {
                 id:'1',
-                name:'Form Psicom',
+                name:'Relatorio tipo 2',
+                department_id:1,
+                department_name:"ABA",
                 status:true,
             },
             {
                 id:'2',
-                name:'Musicoterapia',
+                name:'Relatorio tipo 1',
+                department_id:2,
+                department_name:"Musicoterapia",
                 status:true,
             },
             {
                 id:'3',
                 name:'T.C.C',
+                department_id:3,
+                department_name:"T.C.C",
                 status:true,
-            },
+            }
         ]
     }
 
