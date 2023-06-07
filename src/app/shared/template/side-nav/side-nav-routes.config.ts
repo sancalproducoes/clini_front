@@ -2,12 +2,10 @@ import { SideNavInterface } from '../../interfaces/side-nav.type';
 
 let menu: SideNavInterface[];
 let menu_admin: SideNavInterface[];
+let menu_colaborador: SideNavInterface[];
 let menu_final: SideNavInterface[];
 let roles
 let workspace
-
-
-
 
 if(localStorage.getItem('userdata')!= undefined){
     roles = JSON.parse(localStorage.getItem('userdata'))['roles'];
@@ -20,15 +18,6 @@ if(localStorage.getItem('userdata')!= undefined){
 if(roles != null && roles != undefined){   
     menu = [];
     menu_admin = [
-        {
-            path: workspace+'/dashboard',
-            params: {},
-            title: 'Dashboard',
-            iconType: 'nzIcon',
-            iconTheme: 'outline',
-            icon: 'bar-chart',
-            submenu: []
-        },
         {
             path: workspace+'/usuarios',
             params: {},
@@ -95,6 +84,36 @@ if(roles != null && roles != undefined){
         },
     ]
 
+    menu_colaborador = [
+        {
+            path: workspace+'/usuarios/meus_pacientes',
+            params: {},
+            title: 'Meus Pacientes',
+            iconType: 'nzIcon',
+            iconTheme: 'outline',
+            icon: 'user',
+            submenu: []
+        },   
+        {
+            path: workspace+'/mensagens/',
+            params: {},
+            title: 'Mensagens',
+            iconType: 'nzIcon',
+            iconTheme: 'outline',
+            icon: 'mail',
+            submenu: []
+        },        
+        // {
+        //     path: workspace+'/agenda/',
+        //     params: {},
+        //     title: 'Agenda',
+        //     iconType: 'nzIcon',
+        //     iconTheme: 'outline',
+        //     icon: 'schedule',
+        //     submenu: []
+        // },        
+    ]
+
     menu_final = [
         {
             path: workspace+'/configuracoes',
@@ -106,7 +125,7 @@ if(roles != null && roles != undefined){
             submenu: []
         },
         {
-            path: workspace+'/authentication/sair',
+            path: workspace+'/sair',
             params: {},
             title: 'Sair',
             iconType: 'nzIcon',
@@ -118,11 +137,13 @@ if(roles != null && roles != undefined){
     console.log(roles)
     //Se for Admin
     if(roles.includes("ROLE_ADMIN")){
-        console.log("vraau")
         menu = menu.concat(menu_admin);
-        menu = menu.concat(menu_final);
-    //Se for Usuário comum
     }
+    if(roles.includes("ROLE_COLABORADOR")){{
+        menu = menu.concat(menu_colaborador);
+    }}
+    menu = menu.concat(menu_final);
+
 }
 
 export const ROUTES: SideNavInterface[] = menu ; 

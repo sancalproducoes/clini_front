@@ -1,0 +1,153 @@
+<nz-page-header class="site-page-header" nzBackIcon>
+    <nz-page-header-title>{{componentName}}</nz-page-header-title>
+</nz-page-header>
+<nz-card>
+<nz-tabset class="page-header-tab">
+    <nz-tab nzTitle="Conta">
+        <div class="container">
+            <nz-card nzTitle="Informações Básicas">
+                <div class="media align-items-center">
+                    <nz-avatar  [nzSize]="80" nzIcon="user" [nzSrc]="avatarUrl"></nz-avatar>
+                    <div class="m-l-20 m-r-20">
+                        <h5 class="m-b-5 font-size-18">Alterar Imagem de perfil</h5>
+                        <p class="opacity-07 font-size-13 m-b-0">
+                            Dimensões recomendadas: <br>
+                            512x512 Tamanho máximo: 5MB
+                        </p>
+                    </div>
+                    <nz-upload 
+                        nzName="avatar"
+                        [nzShowUploadList]="false"
+                        (nzChange)="handleChange($event)">
+                        <button nz-button nzType="primary">
+                            <span>Upload</span>
+                        </button>
+                    </nz-upload>
+                </div>
+                <hr class="m-v-25">
+                <div class="row">
+                    <div class="col-md-6">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>Usuário</nz-form-label><br/>
+                                <input nz-input placeholder="Username" readonly value="Marshall Nichols">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-6">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>Email</nz-form-label><br/>
+                                <input nz-input placeholder="Username" type="email" value="">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>Telefone</nz-form-label><br/>
+                                <input nz-input placeholder="Phone Number" >
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-4">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>Data de nascimento</nz-form-label><br/>
+                                <nz-date-picker class="w-100" nzFormat="yyyy/MM/dd" nzPlaceHolder="Date of Birth"></nz-date-picker>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-4">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <nz-form-label>Language</nz-form-label><br/>
+                                <nz-select class="w-100" [(ngModel)]="selectedLanguage" nzPlaceHolder="Language">
+                                    <nz-option nzValue="US" nzLabel="United Stata"></nz-option>
+                                    <nz-option nzValue="UK" nzLabel="United Kingdom"></nz-option>
+                                    <nz-option nzValue="FR" nzLabel="France"></nz-option>
+                                    <nz-option nzValue="DE" nzLabel="German"></nz-option>
+                                </nz-select>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-card>
+            <nz-card nzTitle="Alterar Senha">
+                <form nz-form [formGroup]="changePWForm" (ngSubmit)="submitForm()">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <nz-form-item>
+                                <nz-form-control nzErrorTip="Please input your old password!">
+                                    <nz-form-label nzFor="oldPassword">Senha antiga</nz-form-label><br/>
+                                    <input formControlName="oldPassword" nz-input type="password" placeholder="Old Password">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>    
+                        <div class="col-md-3">
+                             <nz-form-item>
+                                 <nz-form-control nzErrorTip="Please input your New Password!">
+                                    <nz-form-label nzFor="newPassword">Nova senha</nz-form-label><br/>
+                                    <input formControlName="newPassword" nz-input type="password" placeholder="New Password">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div> 
+                        <div class="col-md-3">
+                            <nz-form-item>
+                                <nz-form-control nzErrorTip="Please confirm your New Password!">
+                                    <nz-form-label nzFor="confirmPassword">Confirme a senha</nz-form-label><br/>
+                                    <input formControlName="confirmPassword" nz-input type="password" placeholder="Confirm Password">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div class="col-md-3">
+                            <nz-form-item>
+                                <nz-form-control>
+                                    <nz-form-label class="invisible"></nz-form-label><br/>
+                                    <button  nz-button nzType="primary" [disabled]="!changePWForm.valid">Alterar</button>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>    
+                    </div>
+                </form>
+            </nz-card>  
+            <nz-card nzTitle="Endereço">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nz-form-item>
+                            <nz-form-label>Full Address</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input placeholder="Address">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <nz-form-item>
+                            <nz-form-label>State & City</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input placeholder="State & City">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-6">
+                        <nz-form-item>
+                            <nz-form-label>Country</nz-form-label>
+                            <nz-form-control>
+                                <nz-select class="w-100" [(ngModel)]="selectedCountry" nzPlaceHolder="Country">
+                                    <nz-option nzValue="US" nzLabel="United Stata"></nz-option>
+                                    <nz-option nzValue="UK" nzLabel="United Kingdom"></nz-option>
+                                    <nz-option nzValue="FR" nzLabel="France"></nz-option>
+                                    <nz-option nzValue="DE" nzLabel="German"></nz-option>
+                                </nz-select>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-card>      
+        </div>
+    </nz-tab>
+</nz-tabset>

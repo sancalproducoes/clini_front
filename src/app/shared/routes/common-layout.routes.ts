@@ -20,6 +20,10 @@ export const CommonLayout_ROUTES: Routes = [
     {
         path: ':workspace/formularios',
         loadChildren: () => import('../../formularios/formularios.module').then(m => m.FormulariosModule),
-    }  
+    },
+    {
+        path: ':workspace/mensagens',
+        loadChildren: () => import('../../chat/chat.module').then(m => m.ChatModule),
+    }
 
 ];

@@ -18,6 +18,11 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzListModule } from 'ng-zorro-antd/list';
 
 @NgModule({
     exports: [
@@ -36,7 +41,12 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
         NzSelectModule,
         ReactiveFormsModule,
         NzPopconfirmModule,
-        NzCheckboxModule
+        NzCheckboxModule,
+        NzTabsModule,
+        NzAvatarModule,
+        NzUploadModule,
+        NzDatePickerModule,
+        NzListModule
     ],
     imports: [
         RouterModule,

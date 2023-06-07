@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-usuarios',
-    templateUrl: './usuarios.component.html',
+    templateUrl: './meus_pacientes.component.html',
 })
 
-export class UsuariosComponent implements OnInit {
-    componentName = 'Usuários';
+export class MeusPacientesComponent implements OnInit {
+    componentName = 'Meus Pacientes';
     workspace_name = localStorage.getItem("workspace_name");
     users:any;
     userType = '';

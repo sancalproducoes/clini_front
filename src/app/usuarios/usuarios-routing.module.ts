@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsuariosComponent } from './usuarios.component';
 import { EditUsuariosComponent } from './edit/edit-usuarios.component'
 import { NewUsuariosComponent } from './new/new-usuarios.component';
+import { MeusPacientesComponent } from './meus_pacientes/meus_pacientes.component';
 const routes: Routes = [
     {
         path: '',
@@ -10,6 +11,14 @@ const routes: Routes = [
         data: {
             title: 'Usuários ',
             headerDisplay: "none"
+        }
+    },
+    {
+        path:'meus_pacientes',
+        component: MeusPacientesComponent,
+        data:{
+            title:'',
+            headerDisplay:'none'
         }
     },
     {

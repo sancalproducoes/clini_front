@@ -7,7 +7,7 @@ import { UsuariosComponent } from './usuarios.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { EditUsuariosComponent } from './edit/edit-usuarios.component';
 import { NewUsuariosComponent } from './new/new-usuarios.component';
-
+import { MeusPacientesComponent } from './meus_pacientes/meus_pacientes.component'
 /** Assign all ng-zorro modules to this array*/
 const antdModule = [
     NzButtonModule,
@@ -23,7 +23,8 @@ const antdModule = [
     declarations: [
         UsuariosComponent,
         EditUsuariosComponent,
-        NewUsuariosComponent
+        NewUsuariosComponent,
+        MeusPacientesComponent
     ]
 })
 export class UsuariosModule { }

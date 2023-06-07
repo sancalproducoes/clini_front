@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class SairComponent {
+    workspace = localStorage.getItem("workspace_name")
     constructor(
         private _activatedRoute: ActivatedRoute,
         private router: Router
@@ -18,7 +19,7 @@ export class SairComponent {
     }
 
     sair(){
-        this.router.navigate([localStorage.getItem("workspace_name")+"/authentication/login"])
+        this.router.navigate([this.workspace+"/login"])
         localStorage.clear();
     }
 } 
