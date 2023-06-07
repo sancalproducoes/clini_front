@@ -8,15 +8,53 @@ import { Component, OnInit } from '@angular/core';
 export class NewUsuariosComponent implements OnInit {
     componentName = 'Novo Usuário';
     roles:any;
+    setores
+    tipo_cadastro = 2
     constructor() { }
 
     ngOnInit(): void {
         this.getAllRoles();
-
+        this.getSetores();
     }
     
     cadastraUsuario(){
 
+    }
+
+    getSetores(){
+        this.setores = [
+            {
+                id:'1',
+                nome:'Fono',
+                colaboradores:[
+                    {
+                        id:1,
+                        name:'Giovanna',
+                        lastname:'Lisboa'
+                    },
+                    {
+                        id:2,
+                        name:'Gabrielli',
+                        lastname:'Liria'
+                    }
+                ]
+            },
+            {
+                id:'2',
+                nome:'TCC',
+                colaboradores:[]
+            },
+            {
+                id:'3',
+                nome:'ABA',
+                colaboradores:[]
+            },
+            {
+                id:'4',
+                nome:'Musicoterapia',
+                colaboradores:[]
+            }
+        ]
     }
 
     getAllRoles(){
@@ -42,13 +80,5 @@ export class NewUsuariosComponent implements OnInit {
                 status:true,
             },
         ]
-    }
-
-    editUser(user_id){
-        console.log(user_id)
-    }
-
-    disableUser(user_id){
-        console.log(user_id)
     }
 }

@@ -1,0 +1,25 @@
+<nz-page-header class="site-page-header" nzBackIcon>
+    <nz-page-header-title>{{componentName}}</nz-page-header-title>
+</nz-page-header>
+<nz-card>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <nz-form-label class="filter">Nome</nz-form-label><br/>
+                <input type="text" nz-input placeholder="Nome">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <nz-form-label class="filter">Descrição</nz-form-label><br/>
+                <textarea nz-input placeholder="Sobrenome"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <nz-form-label class="invisible"></nz-form-label><br/>
+                <button (click)="cadastraSetor()" class="w-100" nz-button nzType="primary">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</nz-card>

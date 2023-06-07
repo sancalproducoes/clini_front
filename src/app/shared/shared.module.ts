@@ -17,6 +17,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 @NgModule({
     exports: [
@@ -34,7 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         NzFormModule,
         NzSelectModule,
         ReactiveFormsModule,
-        NzPopconfirmModule
+        NzPopconfirmModule,
+        NzCheckboxModule
     ],
     imports: [
         RouterModule,

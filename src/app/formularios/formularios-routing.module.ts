@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormulariosComponent } from './formularios.component';
-import { EditFormulariosComponent } from './edit/edit-formularios.component'
 import { NewFormulariosComponent } from './new/new-formularios.component';
 const routes: Routes = [
     {
@@ -10,14 +9,6 @@ const routes: Routes = [
         data: {
             title: 'Formulários ',
             headerDisplay: "none"
-        }
-    },
-    {
-        path:'edit/:id',
-        component: EditFormulariosComponent,
-        data:{
-            title:'Editar Formulário',
-            headerDisplay: 'none'
         }
     },
     {

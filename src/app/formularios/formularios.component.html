@@ -5,27 +5,12 @@
     <div class="form">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-7">
                     <nz-form-label class="filter">Buscar por nome</nz-form-label><br/>
                     <input type="text" nzPrefix="searchPrefix" nz-input placeholder="Buscar por nome">
                     <ng-template #searchPrefix>
                         <i class="opacity-04" nz-icon nzType="search"></i>
                     </ng-template>
-                </div>
-                <div class="col-md-2">
-                    <nz-form-label class="filter">Buscar por departamento</nz-form-label><br/>
-                    <input type="text" nzPrefix="searchPrefix" nz-input placeholder="Buscar por departamento">
-                    <ng-template #searchPrefix>
-                        <i class="opacity-04" nz-icon nzType="search"></i>
-                    </ng-template>
-                </div>
-                <div class="col-md-3">
-                    <nz-form-label class="filter">Tipo de cadastro</nz-form-label><br/>
-                    <nz-select class="w-100">
-                        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                        <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
-                      </nz-select>
                 </div>
                 <div class="col-md-2">
                     <nz-form-label class="filter">Ativo</nz-form-label><br/>
@@ -67,8 +52,6 @@
                 <td>{{formulario.department_name}}</td>
                 <td>{{formulario.status}}</td>
                 <td>
-                    <a (click)="editFormulario(formulario.id)" nz-icon nzType="eye" nzTheme="outline"></a> 
-                    &nbsp;
                     <a  nz-popconfirm
                     nzPopconfirmTitle="Tem certeza que quer desativar esse formulário?"
                     nzPopconfirmPlacement="top"

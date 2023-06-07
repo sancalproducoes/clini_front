@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-setores',
@@ -8,49 +9,24 @@ import { Component, OnInit } from '@angular/core';
 export class NewSetoresComponent implements OnInit {
     componentName = 'Novo Setor';
     users:any;
-    constructor() { }
+    newSetorForm: FormGroup
+    constructor(
+        private formBuilder: FormBuilder
+    ) { }
 
     ngOnInit(): void {
-        this.getAllUsers();
+        this.initializeForms();
     }
 
-    getAllUsers(){
-        this.users = [
-            {
-                id:'1',
-                name:'Giovanna',
-                lastname:'Lisboa',
-                email:'giovanna.lisboa@gmail.com',
-                department:'Psico M',
-                cadastro:"Funcionário",
-                status:true,
-            },
-            {
-                id:'2',
-                name:'Marcos',
-                lastname:'Sanches',
-                email:'marcos.sanches@gmail.com',
-                department:'ABA',
-                cadastro:"Funcionário",
-                status:true,
-            },
-            {
-                id:'3',
-                name:'Roseli',
-                lastname:'Alves',
-                email:'roseli.alves@gmail.com',
-                department:'--',
-                cadastro:"Responsável",
-                status:true,
-            },
-        ]
+    initializeForms(){
+        this.newSetorForm = this.formBuilder.group({
+            nome: '',
+            descricao: ''
+        })
     }
 
-    editUser(user_id){
-        console.log(user_id)
+    cadastraSetor(){
+
     }
 
-    disableUser(user_id){
-        console.log(user_id)
-    }
 }

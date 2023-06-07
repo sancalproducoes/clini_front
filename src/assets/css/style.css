@@ -24,3 +24,8 @@ nz-page-header {
 .header *{
     color:white!important;
 }
+
+.header-primary .ant-card-head {
+    background: #35ce8d;
+    color: white;
+}

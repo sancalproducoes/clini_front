@@ -18,12 +18,10 @@
             </div>
             <div class="col-md-3">
                 <nz-form-label class="filter">Tipo de cadastro</nz-form-label><br/>
-                <nz-select class="w-100">
+                <nz-select  class="w-100">
                     <nz-option *ngFor="let role of roles" [nzValue]="role.id" [nzLabel]="role.name"></nz-option>
                 </nz-select>
             </div>
-        </div>
-        <div class="row">
             <div class="col-md-3">
                 <nz-form-label class="filter">Senha</nz-form-label><br/>
                 <input type="text" nz-input placeholder="Senha">
@@ -40,8 +38,6 @@
                 <nz-form-label class="filter">CPF</nz-form-label><br/>
                 <input type="text" nz-input placeholder="CPF">
             </div>
-        </div>
-        <div class="row">
             <div class="col-md-5">
                 <nz-form-label class="filter">Logradouro</nz-form-label><br/>
                 <input type="text" nz-input placeholder="Logradouro">
@@ -58,8 +54,6 @@
                 <nz-form-label class="filter">Bairro</nz-form-label><br/>
                 <input type="text" nz-input placeholder="Bairro">
             </div>
-        </div>
-        <div class="row">
             <div class="col-md-3">
                 <nz-form-label class="filter">CEP</nz-form-label><br/>
                 <input type="text" nz-input placeholder="CEP">
@@ -75,6 +69,30 @@
             <div class="col-md-3">
                 <nz-form-label class="filter">País</nz-form-label><br/>
                 <input type="text" disabled nz-input placeholder="País">
+            </div>
+        </div>
+        <div class="row" *ngIf="tipo_cadastro == 2">
+            <div class="col-md-12">
+                <nz-card class="w-100 m-v-30 header-primary" nzTitle="Colaboradores Atribuidos">
+                    <div *ngFor="let setor of setores;let i = index">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <nz-form-label class="filter">
+                                    Setor
+                                </nz-form-label><br/>
+                                <input type="text" readonly nz-input [value]="setor.nome">
+                            </div>
+                            <div class="col-md-6">
+                                <nz-form-label class="filter">
+                                    Colaborador responsável
+                                </nz-form-label><br/>
+                                <nz-select class="w-100">
+                                    <nz-option *ngFor="let colaborador of setores[i].colaboradores" [nzValue]="colaborador.id" [nzLabel]="colaborador.name+' '+colaborador.lastname"></nz-option>
+                                </nz-select>
+                            </div>
+                        </div>
+                    </div>
+                </nz-card>
             </div>
         </div>
         <div class="row">

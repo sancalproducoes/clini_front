@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-setores',
@@ -7,50 +9,48 @@ import { Component, OnInit } from '@angular/core';
 
 export class EditSetoresComponent implements OnInit {
     componentName = 'Editar Setor';
-    users:any;
-    constructor() { }
+    setor_id:any;
+    setor:any
+    editSetorForm: FormGroup
+    constructor(
+        private act: ActivatedRoute,
+        private formbuilder: FormBuilder
+    ) { }
 
     ngOnInit(): void {
-        this.getAllUsers();
+        this.initializeForms();
+        this.act.params.subscribe(
+            (params) => {
+                this.setor_id = params['id'];
+                this.getSetor(this.setor_id);
+            }
+        )
     }
 
-    getAllUsers(){
-        this.users = [
-            {
-                id:'1',
-                name:'Giovanna',
-                lastname:'Lisboa',
-                email:'giovanna.lisboa@gmail.com',
-                department:'Psico M',
-                cadastro:"Funcionário",
-                status:true,
-            },
-            {
-                id:'2',
-                name:'Marcos',
-                lastname:'Sanches',
-                email:'marcos.sanches@gmail.com',
-                department:'ABA',
-                cadastro:"Funcionário",
-                status:true,
-            },
-            {
-                id:'3',
-                name:'Roseli',
-                lastname:'Alves',
-                email:'roseli.alves@gmail.com',
-                department:'--',
-                cadastro:"Responsável",
-                status:true,
-            },
-        ]
+    initializeForms(){
+        this.editSetorForm = this.formbuilder.group({
+            id:[''],
+            name:[''],
+            descricao:[''],
+        })
     }
 
-    editUser(user_id){
-        console.log(user_id)
+    getSetor(setor_id){
+        this.setor = {
+            id:"1",
+            name:"Setor Top",
+            descricao:"Esse eh um setor top",
+            status:true
+        }
+
+        this.editSetorForm.patchValue({
+            id: this.setor.id,
+            name: this.setor.name,
+            descricao: this.setor.descricao
+        });
     }
 
-    disableUser(user_id){
-        console.log(user_id)
+    editaSetor(){
+
     }
 }
