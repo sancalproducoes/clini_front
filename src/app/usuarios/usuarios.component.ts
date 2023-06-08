@@ -60,6 +60,10 @@ export class UsuariosComponent implements OnInit {
         this.route.navigate([this.workspace_name+'/usuarios/new/'])
     }
 
+    viewUser(user_id){
+        this.route.navigate([this.workspace_name+'/usuarios/view/'+user_id])
+    }
+
     editUser(user_id){
         this.route.navigate([this.workspace_name+'/usuarios/edit/'+user_id])
     }

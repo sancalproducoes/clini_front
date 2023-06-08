@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UsuariosComponent } from './usuarios.component';
 import { EditUsuariosComponent } from './edit/edit-usuarios.component'
+import { ViewUsuariosComponent } from './view/view-usuarios.component';
 import { NewUsuariosComponent } from './new/new-usuarios.component';
 import { MeusPacientesComponent } from './meus_pacientes/meus_pacientes.component';
+import { ProgressoComponent } from './progresso/progresso-usuarios.component'
 const routes: Routes = [
     {
         path: '',
@@ -26,6 +28,22 @@ const routes: Routes = [
         component: EditUsuariosComponent,
         data:{
             title:'Editar Usuário',
+            headerDisplay: 'none'
+        }
+    },
+    {
+        path:'view/:id',
+        component: ViewUsuariosComponent,
+        data:{
+            title:'Editar Usuário',
+            headerDisplay: 'none'
+        }
+    },
+    {
+        path:'view/:id/setor/:setor_id',
+        component: ProgressoComponent,
+        data:{
+            title:'Progresso de usuário',
             headerDisplay: 'none'
         }
     },

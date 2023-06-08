@@ -71,7 +71,9 @@
                 <td>{{user.cadastro}}</td>
                 <td>{{user.status}}</td>
                 <td>
-                    <a (click)="editUser(user.id)" nz-icon nzType="eye" nzTheme="outline"></a> 
+                    <a (click)="viewUser(user.id)" nz-icon nzType="eye" nzTheme="outline"></a> 
+                    &nbsp;
+                    <a (click)="editUser(user.id)" nz-icon nzType="edit" nzTheme="outline"></a> 
                     &nbsp;
                     <a  nz-popconfirm
                     nzPopconfirmTitle="Tem certeza que quer desativar esse usuário?"
