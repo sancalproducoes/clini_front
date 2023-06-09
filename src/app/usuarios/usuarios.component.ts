@@ -31,7 +31,7 @@ export class UsuariosComponent implements OnInit {
                 name:'Giovanna',
                 lastname:'Lisboa',
                 email:'giovanna.lisboa@gmail.com',
-                department:'Psico M',
+                department:'Psicom',
                 cadastro:"Funcionário",
                 status:true,
             },
@@ -41,7 +41,7 @@ export class UsuariosComponent implements OnInit {
                 lastname:'Sanches',
                 email:'marcos.sanches@gmail.com',
                 department:'ABA',
-                cadastro:"Funcionário",
+                cadastro:"Paciente",
                 status:true,
             },
             {

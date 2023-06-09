@@ -4,19 +4,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-usuarios',
-    templateUrl: './progresso-usuarios.component.html',
+    templateUrl: './ficha-usuarios.component.html',
 })
 
-export class ProgressoComponent implements OnInit {
-    componentName = 'Ver progresso';
+export class FichaComponent implements OnInit {
+    componentName = 'Ficha do usuário';
     roles:any;
     user:any;
     user_id:any;
-    setor_id:any;
-    setor_nome = 'Carregando...'
+    ficha_id:any;
+    ficha_nome = 'Carregando...'
     editUserForm:FormGroup
     registros
-    setor
+    ficha
     constructor(
         private ActRoute: ActivatedRoute,
         private formBuilder:FormBuilder,
@@ -26,8 +26,8 @@ export class ProgressoComponent implements OnInit {
     ngOnInit(): void {
         this.ActRoute.params.subscribe(params=>{
             this.user_id = params["id"]
-            this.setor_id = params['setor_id']
-            this.getSetor(this.setor_id);
+            this.ficha_id = params['ficha_id']
+            this.getFicha(this.ficha_id);
         })
         this.initializeForms();
         this.getUsuario(2);
@@ -35,13 +35,13 @@ export class ProgressoComponent implements OnInit {
 
     }
 
-    getSetor(setor_id){
-        this.setor = [{
+    getFicha(ficha_id){
+        this.ficha = [{
             id: '1',
             nome:'Musicoterapia',
             profissional:'Giovanna Lisboa'
         }]
-        this.setor_nome = this.setor[0].nome
+        this.ficha_nome = this.ficha[0].nome
     }
 
     getRegistros(){
@@ -149,11 +149,6 @@ export class ProgressoComponent implements OnInit {
             pais:[this.user[0].pais],
             cep:[this.user[0].cep],
         })
-    }
-
-    addFicha(user_id){
-        let workspace = localStorage.getItem('workspace_name')
-        this.route.navigate([workspace+'/usuarios/view/'+user_id+'/new/ficha'])
     }
 
     verficha(user_id,ficha_id){

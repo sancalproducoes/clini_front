@@ -1,0 +1,91 @@
+<nz-page-header class="site-page-header" nzBackIcon>
+    <nz-page-header-title>{{componentName}}</nz-page-header-title>
+</nz-page-header>
+<nz-card>
+            <div class="container-fluid" [formGroup]="editUserForm">
+                <div class="row">
+                    <div class="col-md-2">
+                        <nz-form-label class="filter">Nome</nz-form-label><br/>
+                        <input type="text" readonly formControlName="name" nz-input placeholder="Nome">
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-label class="filter">Sobrenome</nz-form-label><br/>
+                        <input type="text" readonly formControlName="lastname" nz-input placeholder="Sobrenome">
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-label class="filter">E-mail</nz-form-label><br/>
+                        <input type="text" readonly formControlName="email" nz-input placeholder="E-mail">
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-label class="filter">Tipo de cadastro</nz-form-label><br/>
+                        <input type="text" readonly formControlName="role_name" nz-input placeholder="Cadastro">
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-label class="filter">RG</nz-form-label><br/>
+                        <input type="text" readonly formControlName="rg" nz-input placeholder="RG">
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-label class="filter">CPF</nz-form-label><br/>
+                        <input type="text" readonly formControlName="cpf" nz-input placeholder="CPF">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <nz-form-label class="filter">Logradouro</nz-form-label><br/>
+                        <input type="text" readonly formControlName="logradouro" nz-input placeholder="Logradouro">
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-label class="filter">Número</nz-form-label><br/>
+                        <input type="text" readonly formControlName="numero" nz-input placeholder="Número">
+                    </div>
+                    <div class="col-md-2">
+                        <nz-form-label class="filter">Complemento</nz-form-label><br/>
+                        <input type="text" readonly formControlName="complemento" nz-input placeholder="Complemento">
+                    </div>
+                    <div class="col-md-3">
+                        <nz-form-label class="filter">Bairro</nz-form-label><br/>
+                        <input type="text" readonly formControlName="bairro" nz-input placeholder="Bairro">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <nz-form-label class="filter">CEP</nz-form-label><br/>
+                        <input type="text" readonly formControlName="cep" nz-input placeholder="CEP">
+                    </div>
+                    <div class="col-md-3">
+                        <nz-form-label class="filter">Cidade</nz-form-label><br/>
+                        <input type="text" readonly formControlName="cidade" nz-input placeholder="Cidade">
+                    </div>
+                    <div class="col-md-3">
+                        <nz-form-label class="filter">Estado</nz-form-label><br/>
+                        <input type="text" readonly formControlName="estado" nz-input placeholder="Estado">
+                    </div>
+                    <div class="col-md-3">
+                        <nz-form-label class="filter">País</nz-form-label><br/>
+                        <input type="text" readonly formControlName="pais" nz-input placeholder="País">
+                    </div>
+                </div>
+            </div>
+</nz-card>
+<nz-card nzTitle="">
+    <div class="row" [formGroup]="fichaSelector">
+        <div class="col-md-12">
+            <nz-form-control>
+                <nz-select nzPlaceHolder="Selecione uma ficha" formControlName="ficha" [ngModel]="'0'" (ngModelChange)="selectFicha($event)">
+                    <nz-option *ngFor="let ficha of fichas;" [nzValue]="ficha.id" [nzLabel]="ficha.nome"></nz-option>
+                </nz-select>
+            </nz-form-control>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let item of ficha_selecionada.fields" class="col-md-3">
+            <nz-form-label class="filter">{{item.nome_campo}}</nz-form-label><br/>
+            <input *ngIf="item.tipo_campo == 1" type="text" readonly nz-input placeholder="{{item.nome_campo}}">
+            <nz-select *ngIf="item.tipo_campo == 2" class="w-100" nzPlaceHolder="{{item.nome_campo}}">
+                <nz-option *ngFor="let option of item.values.split(',')" [nzLabel]="option" [nzValue]="option"></nz-option>
+            </nz-select>
+            <nz-date-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-date-picker>
+            <textarea *ngIf="item.tipo_campo == 4" nz-input class="w-100"></textarea>
+        </div>
+    </div>
+</nz-card>

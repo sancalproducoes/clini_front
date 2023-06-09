@@ -67,7 +67,7 @@
         </div>
     </div>
 </nz-card>
-<nz-card nzTitle="Progresso - {{setor_nome}}">
+<nz-card nzTitle="Progresso - {{setor_nome}}" [nzExtra]="extraTemplate">
     <nz-table nzData="registros">
         <thead>
             <th class="w-10">ID</th>
@@ -84,8 +84,19 @@
                 <td>{{registro.formulario_nome}}</td>
                 <td>{{registro.observacao}}</td>
                 <td>{{registro.creation_dt}}</td>
-                <td><button class="w-100" (click)="verProgresso(user_id,registro.id)" nz-button nzType="primary"><span nz-icon nzType="eye" nzTheme="outline"></span></button></td>
+                <td>
+                    <button class="w-100" (click)="verficha(user_id,registro.id)" nz-button nzType="primary">
+                        <span nz-icon nzType="eye" nzTheme="outline"></span>
+                        Ver Ficha
+                    </button>
+                </td>
             </tr>
         </tbody>
     </nz-table>   
 </nz-card>
+<ng-template #extraTemplate>
+    <button class="w-100" (click)="addFicha(user_id)" nz-button nzType="primary">
+        <span nz-icon nzType="plus" nzTheme="outline"></span>
+        Novo Registro
+    </button>
+  </ng-template>

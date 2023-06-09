@@ -10,6 +10,9 @@ import { EditUsuariosComponent } from './edit/edit-usuarios.component';
 import { NewUsuariosComponent } from './new/new-usuarios.component';
 import { MeusPacientesComponent } from './meus_pacientes/meus_pacientes.component'
 import { ProgressoComponent } from './progresso/progresso-usuarios.component';
+import { FichaComponent } from './ficha/ficha-usuarios.component';
+import { NewFichaComponent } from './ficha/new/new-ficha-usuarios.component'
+
 /** Assign all ng-zorro modules to this array*/
 const antdModule = [
     NzButtonModule,
@@ -28,7 +31,9 @@ const antdModule = [
         NewUsuariosComponent,
         MeusPacientesComponent,
         ViewUsuariosComponent,
-        ProgressoComponent
+        ProgressoComponent,
+        FichaComponent,
+        NewFichaComponent
     ]
 })
 export class UsuariosModule { }

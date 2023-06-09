@@ -38,17 +38,17 @@ export class SetoresComponent implements OnInit {
             },
             {
                 id:'2',
-                name:'Psico M.',
+                name:'Psicom',
                 status:true
             },
             {
                 id:'3',
-                name:'ABA',
+                name:'Aplicação',
                 status:true
             },
             {
                 id:'4',
-                name:'Fisioterapia',
+                name:'Fonoaudiologia',
                 status:true
             },
             {
@@ -58,7 +58,7 @@ export class SetoresComponent implements OnInit {
             },
             {
                 id:'6',
-                name:'T.C.C',
+                name:'Psicopedagogia',
                 status:true
             },
         ]

@@ -6,6 +6,8 @@ import { ViewUsuariosComponent } from './view/view-usuarios.component';
 import { NewUsuariosComponent } from './new/new-usuarios.component';
 import { MeusPacientesComponent } from './meus_pacientes/meus_pacientes.component';
 import { ProgressoComponent } from './progresso/progresso-usuarios.component'
+import { FichaComponent } from './ficha/ficha-usuarios.component'
+import { NewFichaComponent } from './ficha/new/new-ficha-usuarios.component'
 const routes: Routes = [
     {
         path: '',
@@ -44,6 +46,22 @@ const routes: Routes = [
         component: ProgressoComponent,
         data:{
             title:'Progresso de usuário',
+            headerDisplay: 'none'
+        }
+    },
+    {
+        path:'view/:id/ficha/:ficha_id',
+        component: FichaComponent,
+        data:{
+            title:'Ficha de usuário',
+            headerDisplay: 'none'
+        }
+    },
+    {
+        path:'view/:id/new/ficha',
+        component: NewFichaComponent,
+        data:{
+            title:'Ficha de usuário',
             headerDisplay: 'none'
         }
     },

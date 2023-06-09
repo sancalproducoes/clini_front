@@ -20,13 +20,15 @@ export class FormulariosComponent implements OnInit {
         this.getAllFormularios();
     }
 
+    //@todo Marcão trocar "setor" por "especialidade"
+
     getAllFormularios(){
         this.formularios = [
             {
                 id:'1',
-                name:'Relatorio tipo 2',
+                name:'Registro de procedimento',
                 department_id:1,
-                department_name:"ABA",
+                department_name:"Aplicação",
                 status:true,
             },
             {
@@ -40,7 +42,7 @@ export class FormulariosComponent implements OnInit {
                 id:'3',
                 name:'T.C.C',
                 department_id:3,
-                department_name:"T.C.C",
+                department_name:"Psicopedagogia",
                 status:true,
             }
         ]
