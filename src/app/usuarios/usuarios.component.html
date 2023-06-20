@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-1">
                     <nz-form-label class="invisible"></nz-form-label><br/>
-                    <button (click)="newUsuario()" class="w-100" nz-button nzType="primary"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
+                    <button (click)="newUser()" class="w-100" nz-button nzType="primary"><span nz-icon nzType="plus" nzTheme="outline"></span></button>
                 </div>
             </div>
         </div>
@@ -68,8 +68,11 @@
                 <td>{{user.name + " " + user.lastname}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.department}}</td>
-                <td>{{user.cadastro}}</td>
-                <td>{{user.status}}</td>
+                <td>{{user.role}}</td>
+                <td>
+                    <span *ngIf="user.status == true">Ativo</span>
+                    <span *ngIf="user.status == False">Inativo</span>
+                </td>
                 <td>
                     <a (click)="viewUser(user.id)" nz-icon nzType="eye" nzTheme="outline"></a> 
                     &nbsp;

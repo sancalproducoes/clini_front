@@ -17,6 +17,7 @@ export class FichaComponent implements OnInit {
     editUserForm:FormGroup
     registros
     ficha
+    dados
     constructor(
         private ActRoute: ActivatedRoute,
         private formBuilder:FormBuilder,
@@ -45,48 +46,60 @@ export class FichaComponent implements OnInit {
     }
 
     getRegistros(){
-        this.registros = [
+        this.ficha = [
             {
-                id:'1',
-                formulario_id:'1',
-                formulario_nome:'Formulario TOP',
-                creation_dt:'2023-06-05 17:00:00',
-                titulo:'Descrição do dia',
-                observacao: 'Deu bom!',
-            },
-            {
-                id:'1',
-                formulario_id:'1',
-                formulario_nome:'Formulario TOP2',
-                creation_dt:'2023-06-05 17:00:00',
-                titulo:'Descrição do dia',
-                observacao: 'Deu bom!',
-            },
-            {
-                id:'1',
-                formulario_id:'1',
-                formulario_nome:'Formulario TOP3',
-                creation_dt:'2023-06-05 17:00:00',
-                titulo:'Descrição do dia',
-                observacao: 'Deu bom!',
-            },
-            {
-                id:'1',
-                formulario_id:'1',
-                formulario_nome:'Formulario TOP4',
-                creation_dt:'2023-06-05 17:00:00',
-                titulo:'Descrição do dia',
-                observacao: 'Deu bom!',
-            },
-            {
-                id:'1',
-                formulario_id:'1',
-                formulario_nome:'Formulario TOP5',
-                creation_dt:'2023-06-05 17:00:00',
-                titulo:'Descrição do dia',
-                observacao: 'Deu bom!',
-            },
+            ficha_id:1,
+            dados:[
+                {
+                '0':[
+                    {
+                        "id":1,
+                        "nome_do_campo":'Quantidade de sessões',
+                        "valor_do_campo":'10'
+                    },
+                    {
+                        "id":2,
+                        "nome_do_campo":'Estímulo',
+                        "valor_do_campo":'Musical'
+                    },
+                    {
+                        "id":3,
+                        "nome_do_campo":'Campo 3',
+                        "valor_do_campo":'Valor 3'
+                    },
+                    {
+                        "id":4,
+                        "nome_do_campo":'Campo 4',
+                        "valor_do_campo":'Valor 4'
+                    }],
+                1:[
+                    {
+                        "id":1,
+                        "nome_do_campo":'Quantidade de sessões',
+                        "valor_do_campo":'10'
+                    },
+                    {
+                        "id":2,
+                        "nome_do_campo":'Estímulo',
+                        "valor_do_campo":'Musical'
+                    },
+                    {
+                        "id":3,
+                        "nome_do_campo":'Campo 3',
+                        "valor_do_campo":'Valor 3'
+                    },
+                    {
+                        "id":4,
+                        "nome_do_campo":'Campo 4',
+                        "valor_do_campo":'Valor 4'
+                    }
+                ]
+            }
         ]
+    }
+]
+
+        this.dados = this.ficha[0].dados
     }
 
     initializeForms(){

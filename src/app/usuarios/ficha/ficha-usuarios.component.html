@@ -76,25 +76,18 @@
         </nz-card>
     </div>
 </div>
-<nz-card nzTitle="Ficha - {{ficha_nome}}">
+<nz-card nzTitle="Ficha - {{ficha_nome + ' - '}}">
     <nz-table nzData="registros">
         <thead>
-            <th class="w-10">ID</th>
-            <th class="w-20">Descrição</th>
-            <th class="w-20">Formulário</th>
-            <th class="w-20">Observação</th>
-            <th class="w-15">Data</th>
-            <th class="w-20">Ação</th>
+            <tr>
+                <th *ngFor="let column of dados">{{column.nome_do_campo}}</th>
+            </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let registro of registros;">
-                <td>{{registro.id}}</td>
-                <td>{{registro.titulo}}</td>
-                <td>{{registro.formulario_nome}}</td>
-                <td>{{registro.observacao}}</td>
-                <td>{{registro.creation_dt}}</td>
+            <tr>
+                <td *ngFor="let registro of dados;">{{registro.valor_do_campo}}</td>
                 <td>
-                    <button class="w-100" (click)="verficha(user_id,registro.id)" nz-button nzType="primary">
+                    <button class="w-100" (click)="verficha(user_id,'')" nz-button nzType="primary">
                         <span nz-icon nzType="eye" nzTheme="outline"></span>
                         Ver Ficha
                     </button>

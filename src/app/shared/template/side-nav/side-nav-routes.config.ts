@@ -10,7 +10,6 @@ let workspace
 if(localStorage.getItem('userdata')!= undefined){
     roles = JSON.parse(localStorage.getItem('userdata'))['roles'];
     workspace = localStorage.getItem('workspace_name');
-    console.log(roles)
 }else{
     roles = []
 }
@@ -26,42 +25,42 @@ if(roles != null && roles != undefined){
             iconTheme: 'outline',
             icon: 'user',
             submenu: [
-                {
-                    path: workspace+'/usuarios',
-                    params: {user_type:'todos'},
-                    title: 'Todos',
-                    iconType: 'nzIcon',
-                    iconTheme: 'outline',
-                    icon: 'user',
-                    submenu: []
-                },
-                {
-                    path: workspace+'/usuarios',
-                    params: {user_type:'funcionarios'},
-                    title: 'Funcionarios',
-                    iconType: 'nzIcon',
-                    iconTheme: 'outline',
-                    icon: 'user',
-                    submenu: []
-                },
-                {
-                    path: workspace+'/usuarios',
-                    params: {user_type:'administradores'},
-                    title: 'Administradores',
-                    iconType: 'nzIcon',
-                    iconTheme: 'outline',
-                    icon: 'user',
-                    submenu: []
-                },
-                {
-                    path: workspace+'/usuarios',
-                    params: {user_type:'pacientes'},
-                    title: 'Pacientes',
-                    iconType: 'nzIcon',
-                    iconTheme: 'outline',
-                    icon: 'user',
-                    submenu: []
-                },
+                // {
+                //     path: workspace+'/usuarios',
+                //     params: {user_type:'todos'},
+                //     title: 'Todos',
+                //     iconType: 'nzIcon',
+                //     iconTheme: 'outline',
+                //     icon: 'user',
+                //     submenu: []
+                // },
+                // {
+                //     path: workspace+'/usuarios',
+                //     params: {user_type:'funcionarios'},
+                //     title: 'Funcionarios',
+                //     iconType: 'nzIcon',
+                //     iconTheme: 'outline',
+                //     icon: 'user',
+                //     submenu: []
+                // },
+                // {
+                //     path: workspace+'/usuarios',
+                //     params: {user_type:'administradores'},
+                //     title: 'Administradores',
+                //     iconType: 'nzIcon',
+                //     iconTheme: 'outline',
+                //     icon: 'user',
+                //     submenu: []
+                // },
+                // {
+                //     path: workspace+'/usuarios',
+                //     params: {user_type:'pacientes'},
+                //     title: 'Pacientes',
+                //     iconType: 'nzIcon',
+                //     iconTheme: 'outline',
+                //     icon: 'user',
+                //     submenu: []
+                // },
             ]
         },
         {
@@ -143,7 +142,6 @@ if(roles != null && roles != undefined){
             submenu: []
         },
     ]
-    console.log(roles)
     //Se for Admin
     if(roles.includes("ROLE_ADMIN")){
         menu = menu.concat(menu_admin);

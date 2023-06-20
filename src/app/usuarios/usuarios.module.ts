@@ -12,6 +12,7 @@ import { MeusPacientesComponent } from './meus_pacientes/meus_pacientes.componen
 import { ProgressoComponent } from './progresso/progresso-usuarios.component';
 import { FichaComponent } from './ficha/ficha-usuarios.component';
 import { NewFichaComponent } from './ficha/new/new-ficha-usuarios.component'
+import { UsersService } from '../shared/services/users.service';
 
 /** Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -34,6 +35,9 @@ const antdModule = [
         ProgressoComponent,
         FichaComponent,
         NewFichaComponent
-    ]
+    ],
+    providers: [
+        UsersService
+    ],
 })
 export class UsuariosModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsersService } from '../shared/services/users.service';
 
 @Component({
     selector: 'app-usuarios',
@@ -13,50 +14,29 @@ export class UsuariosComponent implements OnInit {
     userType = '';
     constructor(
         private route: Router,
-        private actRt: ActivatedRoute
+        private actRt: ActivatedRoute,
+        private UsersSvc: UsersService
     ) { }
 
     ngOnInit(): void {
-        console.log(this.route.url.split('/')[this.route.url.split('/').length -1])
         this.actRt.queryParams.subscribe(data=>{
-            this.userType = data['user_type']
+            if(data['user_type'] != undefined){
+                this.userType = data['user_type']
+            }else{
+                this.userType = 'todos'
+            }
+
         })
-        this.getAllUsers();
+        this.getUsers(this.userType);
     }
 
-    getAllUsers(){
-        this.users = [
-            {
-                id:'1',
-                name:'Giovanna',
-                lastname:'Lisboa',
-                email:'giovanna.lisboa@gmail.com',
-                department:'Psicom',
-                cadastro:"Funcionário",
-                status:true,
-            },
-            {
-                id:'2',
-                name:'Marcos',
-                lastname:'Sanches',
-                email:'marcos.sanches@gmail.com',
-                department:'ABA',
-                cadastro:"Paciente",
-                status:true,
-            },
-            {
-                id:'3',
-                name:'Roseli',
-                lastname:'Alves',
-                email:'roseli.alves@gmail.com',
-                department:'--',
-                cadastro:"Responsável",
-                status:true,
-            },
-        ]
+    getUsers(userType){
+        this.UsersSvc.getUsers(userType).subscribe((res:any)=>{
+            this.users = res;
+        });
     }
 
-    newUsuario(){
+    newUser(){
         this.route.navigate([this.workspace_name+'/usuarios/new/'])
     }
 

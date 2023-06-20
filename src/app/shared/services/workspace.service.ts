@@ -9,10 +9,11 @@ export class WorkspaceService {
     constructor(private http: HttpClient) {}
 
     public getWorkspaceByName(workspace_name){
-        let api = localStorage.getItem("api_key");
+        let api = btoa('admin@clinicare.com.br:jsdk6ccp');
         let headers ={
             'Authorization': 'Basic '+api
         }
         return this.http.get(`${APIROUTE}workspaces/name/`+workspace_name,{headers:headers})
     }
+
 }

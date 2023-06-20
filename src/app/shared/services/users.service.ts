@@ -13,6 +13,16 @@ export class UsersService {
         let headers ={
             'Authorization': 'Basic '+api
         }
-        return this.http.get(`${APIROUTE}workspaces/id/`+workspace_id+'/user/',{headers:headers})
+        return this.http.get(`${APIROUTE}login`,{headers:headers})
+    }
+
+    public getUsers(userType){
+        let api = localStorage.getItem("api_key");
+        let workspace_id = localStorage.getItem("workspace_id");
+
+        let headers ={
+            'Authorization': 'Basic '+api
+        }
+        return this.http.get(`${APIROUTE}users/workspace/`+workspace_id,{headers:headers})
     }
 }
